@@ -11,6 +11,9 @@ The input data needed to recreate this process is stored in the [data](data/) di
 The output of this processing is stored in the [data](data/) directory with the filenames 
 "TELL_Loads_2030_Based_on_YYYY_Weather_With_Climate_Change.csv".
 
+## Summary Plots
+Quick-look plots analyzing the data are stored in the [plots](plots/) directory.
+
 ## Citations
 Any use of this data in a publication, presentation, or report should use the following citations. Please contact 
 Casey Burleyson (casey.burleyson@pnnl.gov) prior to any reuse of the data.
@@ -30,7 +33,7 @@ Jones, A. D., Rastogi, D., Vahmani, P., Stansfield, A., Reed, K., Thurber, T., U
 for these BAs I used the whole load simulated by TELL and distributed it to the subregions within the BA using the 
 annual total load in each subregion to portion out the TELL loads.
 2) The BAs in Canada (AESO and BCHA) and Mexico (CFE) are not modeled by TELL. The time-series for those BAs are the 
-same as that in the original GridView file. Likewise, there are no values for TH_Malin, TH_Mead, and TH_PV.
+same as those in the original GridView file. Likewise, there are no values for TH_Malin, TH_Mead, and TH_PV.
 
 ## BAs in the WECC 
 >
