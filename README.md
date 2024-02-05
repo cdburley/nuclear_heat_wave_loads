@@ -1,17 +1,15 @@
-# ntp_heat_wave_loads
+# nuclear_heat_wave_loads
 This repository houses the raw data and processing scripts to create the hourly load time series by 
-Balancing Authority for the NTP project. Data are scaled to match the 2035 annual total loads data by BA. 
-The future loads for different weather years are based on the Total ELectricity Loads (TELL) model.
+Balancing Authority for the nuclear project. Data are scaled to match the 2030 annual total loads data by BA. 2030 loads
+were shared by Kostas on 2-Feb 2024. The future loads for different weather years are based on the Total ELectricity 
+Loads (TELL) model.
 
 ## Input Files
 The input data needed to recreate this process is stored in the [data](data/) directory.
 
 ## Output Files
 The output of this processing is stored in the [data](data/) directory with the filenames 
-"TELL_Loads_2035_Based_on_YYYY_Weather_With_Climate_Change.csv".
-
-## Summary Plots
-Quick-look plots analyzing the data are stored in the [plots](plots/) directory.
+"TELL_Loads_2030_Based_on_YYYY_Weather_With_Climate_Change.csv".
 
 ## Citations
 Any use of this data in a publication, presentation, or report should use the following citations. Please contact 
@@ -31,6 +29,8 @@ Jones, A. D., Rastogi, D., Vahmani, P., Stansfield, A., Reed, K., Thurber, T., U
 1) Loads in CISO, IPCO, NEVP, and PACE are modeled as a whole in TELL but are separated in GridView. To create the data
 for these BAs I used the whole load simulated by TELL and distributed it to the subregions within the BA using the 
 annual total load in each subregion to portion out the TELL loads.
+2) The BAs in Canada (AESO and BCHA) and Mexico (CFE) are not modeled by TELL. The time-series for those BAs are the 
+same as that in the original GridView file. Likewise, there are no values for TH_Malin, TH_Mead, and TH_PV.
 
 ## BAs in the WECC 
 >
@@ -40,10 +40,13 @@ annual total load in each subregion to portion out the TELL loads.
 >
 | GV BA | TELL BA | Matched? | Notes |
 | :-: | :-: | :-: | :-: |
+| AESO | - | 🔴 | BA is in Canada |
 | AVA | AVA | 🟢 | - |
 | AZPS | AZPS | 🟢 | - |
 | BANC | BANC | 🟢 | - |
+| BCHA | - | 🔴 | BA is in Canada |
 | BPAT | BPAT | 🟢 | - |
+| CFE | - | 🔴 | BA is in Mexico |
 | CHPD| CHPD| 🟢 | - |
 | CIPB | CISO | 🟡 | Subregion of CISO |
 | CIPV | CISO | 🟡 | Subregion of CISO |
@@ -71,6 +74,9 @@ annual total load in each subregion to portion out the TELL loads.
 | SPCC | NEVP | 🟡 | Subregion of NEVP |
 | SRP | SRP | 🟢 | - |
 | TEPC | TEPC | 🟢 | - |
+| TH Malin | - | 🔴 | No match and no loads in original GridView data |
+| TH Mead | - | 🔴 | No match and no loads in original GridView data |
+| TH PV | - | 🔴 | No match and no loads in original GridView data |
 | TIDC | TIDC | 🟢 | - |
 | TPWR | TPWR | 🟢 | - |
 | VEA | CISO | 🟡 | Subregion of CISO |
